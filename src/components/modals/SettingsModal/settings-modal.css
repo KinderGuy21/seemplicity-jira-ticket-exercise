@@ -1,0 +1,32 @@
+.settings-modal {
+  line-height: 2em;
+  word-wrap: wrap;
+}
+.settings-modal .title {
+  color: rgb(38, 2, 108);
+  font-size: 1.2em;
+  font-weight: 500;
+}
+.settings-modal hr {
+  border-top: 1px solid rgb(224, 225, 232);
+}
+.settings-modal .info .subtitle {
+  color: var(--primary-color);
+}
+.settings-modal .info .content {
+  font-size: 0.8em;
+  color: var(--primary-color);
+}
+.settings-modal .info .content .user-list {
+  margin: 0;
+}
+.settings-modal .footer {
+  text-align: left;
+}
+.settings-modal .footer .button {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  color: var(--secondary-color);
+  font-weight: 600;
+}/*# sourceMappingURL=settings-modal.css.map */

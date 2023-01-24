@@ -1,0 +1,39 @@
+.new-ticket-modal {
+	line-height: 2em;
+	word-wrap: wrap;
+
+	.title {
+		color: rgb(38, 2, 108);
+		font-size: 1.2em;
+		font-weight: 500;
+	}
+
+    hr {
+        border-top: 1px solid rgb(224, 225, 232);
+    }
+
+	.info {
+		.subtitle {
+			color: var(--primary-color);
+		}
+
+		.content {
+			font-size: 0.8em;
+			color: var(--primary-color);
+
+			.user-list {
+				margin: 0;
+			}
+		}
+	}
+	.footer {
+		text-align: left;
+        .button {
+            border: none;
+            outline: none;
+            background-color: transparent;
+            color: var(--secondary-color);
+            font-weight: 600;
+        }
+	}
+}

@@ -1,0 +1,14 @@
+.not-found-container {
+  height: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  overflow: hidden;
+}
+.not-found-container .title {
+  font-size: 20rem;
+  font-weight: 900;
+  text-shadow: -7px -7px 0 var(--primary-color), 7px -7px 0 var(--primary-color), -7px 7px 0 var(--primary-color), 7px 7px 0 var(--primary-color);
+  color: white;
+}/*# sourceMappingURL=not-found.css.map */

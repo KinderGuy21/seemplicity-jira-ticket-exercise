@@ -1,0 +1,68 @@
+.table-container {
+	table {
+		border-collapse: collapse;
+		width: 100%;
+		box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.08);
+		margin-top: 2rem;
+	}
+
+	table td,
+	table th {
+		border: 1px solid rgb(224, 225, 232);
+		height: 52px;
+		padding: 0.2em 1.5em;
+	}
+
+	table td:not(:last-child),
+	th:not(:last-child) {
+		border-right-color: transparent;
+	}
+
+	table tr:hover {
+		background-color: rgba(224, 225, 232, 0.3);
+	}
+
+	table th {
+		text-align: left;
+		font-weight: 500;
+		font-size: 1em;
+		color: var(--text-color);
+
+		.arrow {
+			color: rgba(65, 66, 90, 0.3);
+			padding-left: 0.5em;
+		}
+	}
+
+	table td {
+		button {
+			cursor: pointer;
+			border: none;
+			outline: none;
+			font-weight: 500;
+			background-color: transparent;
+			color: var(--secondary-color);
+
+			&:hover,
+			&:focus {
+				opacity: 0.7;
+			}
+		}
+	}
+
+	.buttons-container {
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+		gap: 0.5em;
+		padding-top: 1em;
+		
+		button {
+			cursor: pointer;
+			border: none;
+			outline: none;
+			font-weight: 500;
+			background-color: transparent;
+		}
+	}
+}

@@ -1,0 +1,37 @@
+.navbar-container {
+  color: rgb(255, 255, 255);
+  background-color: var(--primary-color);
+  justify-content: space-between;
+  height: var(--navbar-height);
+  display: flex;
+  align-items: center;
+  padding: 0 1em;
+  min-width: -webkit-fit-content;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
+}
+.navbar-container .left-side,
+.navbar-container .right-side {
+  display: flex;
+  gap: 2rem;
+  height: 100%;
+  align-items: center;
+}
+.navbar-container .user {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+.navbar-container .icon-button {
+  border: none;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.navbar-container .icon-button .settings-icon {
+  transition: all 0.5s;
+}
+.navbar-container .icon-button .settings-icon:hover {
+  rotate: 15deg;
+}/*# sourceMappingURL=navbar.css.map */

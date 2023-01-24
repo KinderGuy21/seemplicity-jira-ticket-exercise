@@ -1,0 +1,58 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  viewBox="0 0 145.08 148.95"
+>
+  <defs>
+    <linearGradient
+      id="linear-gradient"
+      x1="14.31"
+      y1="34.02"
+      x2="97.71"
+      y2="34.02"
+      gradientUnits="userSpaceOnUse"
+    >
+      <stop offset="0" stop-color="#e2088d" />
+      <stop offset="1" stop-color="#9908c3" />
+    </linearGradient>
+    <linearGradient
+      id="linear-gradient-2"
+      x1="171.77"
+      y1="222.24"
+      x2="255.17"
+      y2="222.24"
+      gradientTransform="translate(302.54 337.17) rotate(180)"
+      xlink:href="#linear-gradient"
+    />
+  </defs>
+  <g id="Layer_2" data-name="Layer 2">
+    <g id="Logo">
+      <circle
+        id="upper-ball"
+        cx="116.48"
+        cy="33.46"
+        r="28.6"
+        style="fill:#35f2ba"
+      />
+      <circle
+        id="lower-ball"
+        cx="28.6"
+        cy="115.49"
+        r="28.6"
+        style="fill:#35f2ba"
+      />
+      <g id='gradients'>
+        <path
+          id="upper-gradient"
+          d="M77.2,34A38.58,38.58,0,0,1,97.71,0H48.64A34.18,34.18,0,0,0,14.31,34h0a34.18,34.18,0,0,0,34.33,34H97.71A38.58,38.58,0,0,1,77.2,34Z"
+          style="fill:url(#linear-gradient)"
+        />
+        <path
+          id="lower-gradiient"
+          d="M67.87,114.93a38.56,38.56,0,0,1-20.5,34H96.44a34.18,34.18,0,0,0,34.33-34h0a34.18,34.18,0,0,0-34.33-34H47.37A38.59,38.59,0,0,1,67.87,114.93Z"
+          style="fill:url(#linear-gradient-2)"
+        />
+      </g>
+    </g>
+  </g>
+</svg>

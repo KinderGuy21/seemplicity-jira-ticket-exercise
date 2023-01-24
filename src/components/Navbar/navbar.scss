@@ -1,0 +1,40 @@
+.navbar-container {
+	color: rgb(255, 255, 255);
+	background-color: var(--primary-color);
+	justify-content: space-between;
+	height: var(--navbar-height);
+	display: flex;
+	align-items: center;
+	padding: 0 1em;
+    min-width: fit-content;
+
+	.left-side,
+	.right-side {
+		display: flex;
+		gap: 2rem;
+		height: 100%;
+		align-items: center;
+	}
+
+	.user {
+		display: flex;
+		align-items: center;
+		gap: 0.5em;
+	}
+
+	.icon-button {
+		border: none;
+		background-color: transparent;
+        display: flex;
+		align-items: center;
+		cursor: pointer;
+
+		.settings-icon {
+			transition: all 0.5s;
+
+			&:hover {
+				rotate: 15deg;
+			}
+		}
+	}
+}

@@ -1,0 +1,98 @@
+.loading-logo-container {
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	gap: 2em;
+
+	.logo-svg {
+		height: 30%;
+		text-align: center;
+		overflow: visible;
+
+		#lower-ball {
+			animation: rotate-balls 6s ease-in-out infinite,
+				lower-ball-move 12s ease-in-out infinite;
+			transform-origin: center center;
+		}
+
+		#upper-ball {
+			animation: rotate-balls 6s ease-in-out infinite,
+				upper-ball-move 12s ease-in-out infinite;
+			transform-origin: center center;
+		}
+
+		#gradients {
+			animation: rotate 6s ease-in-out infinite;
+			transform-origin: center center;
+		}
+	}
+
+	.text {
+		font-size: 2em;
+	}
+}
+
+@keyframes lower-ball-move {
+	0% {
+		transform: translateX(0);
+	}
+	20%,
+	95% {
+		transform: translateX(-200px);
+	}
+    30%,
+	80%,
+	90% {
+		transform: translateX(0);
+	}
+}
+
+@keyframes upper-ball-move {
+	0% {
+		transform: translateX(0);
+	}
+	20%,
+	95% {
+		transform: translateX(200px);
+	}
+	30%,
+	80%,
+	90% {
+		transform: translateX(0);
+	}
+}
+
+@keyframes rotate-balls {
+	0% {
+		rotate: 0;
+		scale: 1;
+	}
+	10% {
+		scale: 1.2;
+	}
+	30%,
+	80% {
+		rotate: 360deg;
+		scale: 1;
+	}
+}
+
+
+
+
+@keyframes rotate {
+	0% {
+		rotate: 0;
+		scale: 1;
+	}
+	10% {
+		scale: 1.2;
+	}
+	30%,
+	80% {
+		rotate: 180deg;
+		scale: 1;
+	}
+}
