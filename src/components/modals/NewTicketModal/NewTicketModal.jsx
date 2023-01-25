@@ -75,7 +75,7 @@ const NewTicketModal = ({id: ticketId, title: ticketTitle, description: ticketDe
 
 			<form className='form-container' onSubmit={handleSubmit(onSubmit)}>
 				<div className='providers-container'>
-					{Object.keys(PROVIDERS).map((provider) => (
+					{Object.keys(PROVIDERS).map(provider => (
 						<label key={provider} className='provider'>
 							<input
 								type='radio'
@@ -86,16 +86,19 @@ const NewTicketModal = ({id: ticketId, title: ticketTitle, description: ticketDe
 								{...register('ticket.provider', {
 									required: 'Provider is required.',
 								})}
-							/>
-							{MatchProviderIcon(PROVIDERS[provider], true)}
+							/>					
+							<span>
+								{MatchProviderIcon(PROVIDERS[provider], true)}
+							</span>			
 						</label>
 					))}
-					{errors.provider && (
-						<p className='errorMsg'>
-							This is a required field.
-						</p>
-					)}
 				</div>
+
+				{errors?.ticket?.provider && (
+						<div className='error-msg'>
+							This is a required field.
+						</div>
+					)}
 
 				<div className='info-container'>
 					<label className='subtitle'>
@@ -113,10 +116,10 @@ const NewTicketModal = ({id: ticketId, title: ticketTitle, description: ticketDe
 								/>
 							)}
 						/>
-						{errors.project && (
-							<p className='errorMsg'>
+						{errors?.ticket?.project && (
+							<div className='error-msg'>
 								This is a required field.
-							</p>
+							</div>
 						)}
 					</label>
 					<label className='subtitle'>
@@ -133,10 +136,10 @@ const NewTicketModal = ({id: ticketId, title: ticketTitle, description: ticketDe
 								/>
 							)}
 						/>
-						{errors.issueType && (
-							<p className='errorMsg'>
+						{errors?.ticket?.issueType && (
+							<div className='error-msg'>
 								This is a required field.
-							</p>
+							</div>
 						)}
 					</label>
 				</div>
@@ -153,10 +156,10 @@ const NewTicketModal = ({id: ticketId, title: ticketTitle, description: ticketDe
 								required: 'title is required.',
 							})}
 						/>
-						{errors.title && (
-							<p className='errorMsg'>
+						{errors?.ticket?.title && (
+							<div className='error-msg'>
 								This is a required field.
-							</p>
+							</div>
 						)}
 						<div className='input-text'>Description</div>
 						<textarea
@@ -165,10 +168,10 @@ const NewTicketModal = ({id: ticketId, title: ticketTitle, description: ticketDe
 								required: 'Description is required.',
 							})}
 						/>
-						{errors.description && (
-							<p className='errorMsg'>
+						{errors?.ticket?.description && (
+							<div className='error-msg'>
 								This is a required field.
-							</p>
+							</div>
 						)}
 					</div>
 				) : null}

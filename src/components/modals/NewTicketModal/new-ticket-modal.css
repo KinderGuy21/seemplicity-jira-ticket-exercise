@@ -2,6 +2,9 @@
   line-height: 2em;
   word-wrap: wrap;
 }
+.new-ticket-modal .error-msg {
+  color: rgb(199, 28, 28);
+}
 .new-ticket-modal .title {
   color: rgb(38, 2, 108);
   font-size: 1.2em;
@@ -13,12 +16,18 @@
 .new-ticket-modal .form-container .providers-container {
   display: flex;
   align-items: center;
-  gap: 0.5em;
+  gap: 1em;
 }
 .new-ticket-modal .form-container .providers-container .provider {
   display: inherit;
+  align-items: center;
+  gap: 1em;
 }
 .new-ticket-modal .form-container .providers-container .provider input[type=radio] {
+  scale: 1.5;
+}
+.new-ticket-modal .form-container .providers-container .provider span {
+  display: inherit;
   scale: 1.2;
 }
 .new-ticket-modal .form-container .info-container {
@@ -39,7 +48,8 @@
 .new-ticket-modal .form-container .info-container .content .user-list {
   margin: 0;
 }
-.new-ticket-modal .form-container .details-container input[type=text], .new-ticket-modal .form-container .details-container textarea {
+.new-ticket-modal .form-container .details-container input[type=text],
+.new-ticket-modal .form-container .details-container textarea {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -48,7 +58,8 @@
   border-radius: 4px;
   box-sizing: border-box;
 }
-.new-ticket-modal .form-container .details-container input[type=text]:focus, .new-ticket-modal .form-container .details-container textarea:focus {
+.new-ticket-modal .form-container .details-container input[type=text]:focus,
+.new-ticket-modal .form-container .details-container textarea:focus {
   outline: 2px solid var(--secondary-color);
 }
 .new-ticket-modal .form-container .details-container textarea {
@@ -66,6 +77,7 @@
   bottom: 0;
   right: 0;
   padding: 0.5em 1em;
+  font-size: 0.7em;
 }
 .new-ticket-modal .form-container .footer button {
   border: 1px solid black;
@@ -77,7 +89,7 @@
           user-select: none;
   cursor: pointer;
   background-color: transparent;
-  padding: 0.2em 1em;
+  padding: 0em 1.5em;
 }
 .new-ticket-modal .form-container .footer .submit-button {
   margin-left: 1em;
