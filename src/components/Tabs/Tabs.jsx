@@ -4,8 +4,20 @@ import clsx from 'clsx';
 import { PATH_NAMES, TABS_NAMES } from 'constants';
 import './tabs.css';
 
+const checkCurrentLocation = () => {
+	let matchedPath = Object.values(PATH_NAMES).find(path => path === window.location.pathname);
+
+	if(matchedPath) {
+		if(matchedPath === PATH_NAMES.EMPTY) {
+			return PATH_NAMES.DASHBOARD;
+		}
+		return matchedPath
+	}
+	return PATH_NAMES.DASHBOARD;
+};
+
 const Tabs = () => {
-	const [activeTab, setActiveTab] = useState(window.location.pathname);
+	const [activeTab, setActiveTab] = useState(checkCurrentLocation());
 	const navigate = useNavigate();
 
 	const handleTabClick = ({ target }) => {

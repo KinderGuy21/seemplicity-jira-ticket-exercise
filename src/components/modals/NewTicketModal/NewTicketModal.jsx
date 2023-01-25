@@ -1,14 +1,18 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import Select from 'react-select';
 import { useForm, Controller } from 'react-hook-form';
+import { toast } from 'react-toastify';
 import { PROVIDERS, ISSUE_TYPES } from 'constants';
+import { findingsContexts } from 'contexts';
 import { MatchProviderIcon, U4ID } from 'utils';
 import { axiosMockInstance } from 'api';
 import './new-ticket-modal.css';
 
-const NewTicketModal = ({title: ticketTitle, description: ticketDescription, closeModal}) => {
+const NewTicketModal = ({id: ticketId, title: ticketTitle, description: ticketDescription, closeModal}) => {
 	const [providerProjects, setProviderProjects] = useState([]);
 	const [isProjectsLoading, setIsProjectsLoading] = useState(false);
+
+	const { findingsData, setFindingsData } = useContext(findingsContexts);
 
 	const {
 		register,
@@ -20,27 +24,42 @@ const NewTicketModal = ({title: ticketTitle, description: ticketDescription, clo
 		resetField
 	} = useForm({
 		defaultValues: {
-			id: U4ID,
-			provider: null,
-			project: null,
-			issueType: null,
 			title: ticketTitle,
-			description: ticketDescription
+			description: ticketDescription,
+			ticket: {
+				id: U4ID(),
+				provider: null,
+				project: null,
+				issueType: null,
+			}
 		},
 	});
 
-	const watchProject = watch('project');
-	const watchIssueType = watch('issueType');
+	const watchProject = watch('ticket.project');
+	const watchIssueType = watch('ticket.issueType');
 
 	const onSubmit = (data) => {
-		console.log(data);
-		// setSuccessMsg('User registration is successful.');
+		let updatedData = findingsData.map((obj) => {
+			if (obj.id === ticketId) {
+				return Object.assign({}, obj, data);
+			}
+			return obj;
+		});
+		setFindingsData(updatedData);
+
+		toast.success('Created ticket successfully', {
+			position: 'bottom-right',
+			autoClose: 3000,
+		});
+
+		closeModal();
 	};
+
 
 	const handleProviderChange = async ({ target }) => {
 		const selectedProvider = target.getAttribute("data-provider")
-		resetField("project")
-		resetField("issueType")
+		resetField("ticket.project")
+		resetField("ticket.issueType")
 
 		setIsProjectsLoading(true)
 		const result = await axiosMockInstance.get(`/api/provider/${selectedProvider}/projects`);
@@ -64,7 +83,7 @@ const NewTicketModal = ({title: ticketTitle, description: ticketDescription, clo
 								data-provider={PROVIDERS[provider]}
 								onClick={handleProviderChange}
 								value={PROVIDERS[provider]}
-								{...register('provider', {
+								{...register('ticket.provider', {
 									required: 'Provider is required.',
 								})}
 							/>
@@ -82,11 +101,16 @@ const NewTicketModal = ({title: ticketTitle, description: ticketDescription, clo
 					<label className='subtitle'>
 						<span className='input-text'>Project</span>
 						<Controller
-							name='project'
+							name='ticket.project'
 							control={control}
 							rules={{ required: true }}
-							render={({ field }) => (
-								<Select {...field} options={providerProjects} placeholder='Select Project' isLoading={isProjectsLoading} />
+							render={({ field: { onChange } }) => (
+								<Select
+									options={providerProjects}
+									placeholder='Select Project'
+									onChange={val => onChange(val.value)}
+									isLoading={isProjectsLoading}
+								/>
 							)}
 						/>
 						{errors.project && (
@@ -98,11 +122,15 @@ const NewTicketModal = ({title: ticketTitle, description: ticketDescription, clo
 					<label className='subtitle'>
 						<span className='input-text'>Issue Type</span>
 						<Controller
-							name='issueType'
+							name='ticket.issueType'
 							control={control}
 							rules={{ required: true }}
-							render={({ field }) => (
-								<Select {...field} placeholder='Select Issue Type' options={ISSUE_TYPES} />
+							render={({ field: { onChange } }) => (
+								<Select
+									options={ISSUE_TYPES}
+									placeholder='Select Issue Type'
+									onChange={val => onChange(val.value)}
+								/>
 							)}
 						/>
 						{errors.issueType && (

@@ -27,7 +27,7 @@ const FindingsTable = ({ columns, data }) => {
 
 	const handleRowClick = (e, cell) => {
 		if(e.target.type !== 'submit') return
-		openModal(cell.row.values)
+		openModal(cell.row.original)
 	}
 
 	return (

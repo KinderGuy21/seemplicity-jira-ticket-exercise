@@ -16,6 +16,12 @@
   gap: 2rem;
   height: 100%;
   align-items: center;
+  padding: 0 1em;
+}
+.navbar-container .left-side .seemplicity-logo,
+.navbar-container .right-side .seemplicity-logo {
+  width: 12em;
+  height: 100%;
 }
 .navbar-container .user {
   display: flex;

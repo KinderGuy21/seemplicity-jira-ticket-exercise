@@ -9,15 +9,15 @@ const Navbar = () => {
 	return (
 		<div className='navbar-container'>
 			<div className='left-side'>
-				<SeemplicityIcon className='logo-container' />
+				<SeemplicityIcon className='seemplicity-logo' />
 				<Tabs />
 			</div>
 			<div className='right-side'>
 				<button className='icon-button' onClick={openModal}>
-					<SettingsIcon className='logo-container settings-icon' />
+					<SettingsIcon />
 				</button>
 				<div className='user'>
-					<PersonIcon className='logo-container' />
+					<PersonIcon />
 					Alon@seemplicity.io
 				</div>
 			</div>

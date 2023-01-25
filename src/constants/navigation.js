@@ -4,7 +4,6 @@ export const PATH_NAMES = {
 	FINDINGS: '/findings',
 	REMEDIATION: '/remediation',
 	RULES: '/rules',
-	SETTINGS: '/settings',
 };
 
 export const TABS_NAMES = [
