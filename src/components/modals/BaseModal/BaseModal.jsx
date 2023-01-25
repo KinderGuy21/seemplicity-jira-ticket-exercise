@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
 import Modal from 'react-modal';
+import { CloseIcon } from 'assets';
 import './base-modal.css';
 
 const BaseModal = ({ isOpen, onClose, className, children, ...props }) => (
@@ -13,7 +14,7 @@ const BaseModal = ({ isOpen, onClose, className, children, ...props }) => (
 		{...props}
 	>
 		<button className='close' onClick={onClose}>
-		&#128473;
+			<CloseIcon />
 		</button>
 
 		<div className='modal-content'>{children}</div>

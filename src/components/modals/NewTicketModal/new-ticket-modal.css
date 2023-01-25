@@ -10,23 +10,77 @@
 .new-ticket-modal hr {
   border-top: 1px solid rgb(224, 225, 232);
 }
-.new-ticket-modal .info .subtitle {
+.new-ticket-modal .form-container .providers-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+.new-ticket-modal .form-container .providers-container .provider {
+  display: inherit;
+}
+.new-ticket-modal .form-container .providers-container .provider input[type=radio] {
+  scale: 1.2;
+}
+.new-ticket-modal .form-container .info-container {
+  display: flex;
+  margin-top: 1em;
+  gap: 1em;
+}
+.new-ticket-modal .form-container .info-container label {
+  flex-grow: 1;
+}
+.new-ticket-modal .form-container .info-container .subtitle {
   color: var(--primary-color);
 }
-.new-ticket-modal .info .content {
+.new-ticket-modal .form-container .info-container .content {
   font-size: 0.8em;
   color: var(--primary-color);
 }
-.new-ticket-modal .info .content .user-list {
+.new-ticket-modal .form-container .info-container .content .user-list {
   margin: 0;
 }
-.new-ticket-modal .footer {
-  text-align: left;
+.new-ticket-modal .form-container .details-container input[type=text], .new-ticket-modal .form-container .details-container textarea {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
 }
-.new-ticket-modal .footer .button {
-  border: none;
+.new-ticket-modal .form-container .details-container input[type=text]:focus, .new-ticket-modal .form-container .details-container textarea:focus {
+  outline: 2px solid var(--secondary-color);
+}
+.new-ticket-modal .form-container .details-container textarea {
+  max-height: 12em;
+  min-height: 6em;
+  max-width: 90em;
+  min-width: 39em;
+}
+.new-ticket-modal .form-container .input-text {
+  color: rgb(38, 2, 108);
+  font-weight: 500;
+}
+.new-ticket-modal .form-container .footer {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 0.5em 1em;
+}
+.new-ticket-modal .form-container .footer button {
+  border: 1px solid black;
+  border-radius: 56px;
   outline: none;
+  cursor: pointer;
   background-color: transparent;
-  color: var(--secondary-color);
-  font-weight: 600;
+  padding: 0.2em 1em;
+}
+.new-ticket-modal .form-container .footer .submit-button {
+  margin-left: 1em;
+  background-color: var(--secondary-color);
+  border: none;
+  color: rgb(255, 255, 255);
+}
+.new-ticket-modal .form-container .footer .submit-button:disabled {
+  opacity: 0.6;
 }/*# sourceMappingURL=new-ticket-modal.css.map */

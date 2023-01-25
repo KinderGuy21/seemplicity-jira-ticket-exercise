@@ -1,19 +1,12 @@
-import { ServiceNowIcon, MondayIcon, JiraIcon } from 'assets';
+import { MatchProviderIcon } from 'utils';
 
 export const FINDINGS_TABLE_HEADERS = ['Title', 'Description', 'Ticket'];
 
-const MatchProviderIcon = (provider) => {
-	switch (provider) {
-		case 'Monday':
-			return <MondayIcon />
-		case 'Jira':
-			return <JiraIcon />
-		case 'ServiceNow':
-			return <ServiceNowIcon />
-		default:
-			return null
-	}
-}
+export const PROVIDERS = {
+	JIRA: 'Jira',
+	SERVICENOW: 'ServiceNow',
+	MONDAY: 'Monday',
+};
 
 export const FINDINGS_TABLE_COLUMNS = [
 	{
@@ -21,7 +14,7 @@ export const FINDINGS_TABLE_COLUMNS = [
 		accessor: 'title',
 	},
 	{
-		Header: 'Description', 
+		Header: 'Description',
 		accessor: 'description',
 	},
 	{
@@ -29,15 +22,19 @@ export const FINDINGS_TABLE_COLUMNS = [
 		accessor: ({ ticket }) =>
 			Object.keys(ticket).length > 0 ? (
 				<div>
-					<span>
-						{MatchProviderIcon(ticket.provider)}
-					</span>
-					<span style={{ marginLeft: '0.5em', fontWeight: '500'}}>
-					{ticket.provider}-{ticket.id}
+					<span>{MatchProviderIcon(ticket.provider)}</span>
+					<span style={{ marginLeft: '0.5em', fontWeight: '500' }}>
+						{ticket.provider}-{ticket.id}
 					</span>
 				</div>
 			) : (
 				<button>Create Ticket</button>
 			),
 	},
+];
+
+export const ISSUE_TYPES = [
+	{ value: 'Bug', label: 'Bug' },
+	{ value: 'Task', label: 'Task' },
+	{ value: 'Story', label: 'Story' },
 ];

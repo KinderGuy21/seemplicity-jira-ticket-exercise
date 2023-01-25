@@ -1,12 +1,16 @@
 import { useState, useCallback, useMemo } from 'react';
 import { BaseModal } from 'components';
 
-const useModal = (Modal, props) => {
+const useModal = (Modal) => {
   const [isOpen, setOpen] = useState(false);
+  const [modalProps, setModalProps] = useState(null)
 
-  const openModal = useCallback(() => (
-    setOpen(true)
-  ), [setOpen]);
+  const openModal = useCallback((openModalProps) => {
+    if(openModalProps) {
+      setModalProps(openModalProps);
+    }
+    return setOpen(true)
+  }, [setOpen]);
 
   const closeModal = useCallback(() => (
     setOpen(false)
@@ -18,9 +22,9 @@ const useModal = (Modal, props) => {
         isOpen={isOpen}
         onClose={closeModal}
       >
-        <Modal {...props} closeModal={closeModal}/>
+        <Modal {...modalProps} closeModal={closeModal}/>
       </BaseModal>
-  ), [isOpen, closeModal, props]);
+  ), [isOpen, closeModal, modalProps]);
 
   return {
     openModal,
