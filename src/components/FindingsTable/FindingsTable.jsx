@@ -25,9 +25,9 @@ const FindingsTable = ({ columns, data }) => {
 	const { pageIndex } = state;
 	
 
-	const handleRowClick = ({target}) => {
-		if(target.type !== 'submit') return
-		openModal()
+	const handleRowClick = (e, cell) => {
+		if(e.target.type !== 'submit') return
+		openModal(cell.row.original)
 	}
 
 	return (
@@ -66,7 +66,7 @@ const FindingsTable = ({ columns, data }) => {
 							<tr {...row.getRowProps()}>
 								{row.cells.map((cell) => {
 									return (
-										<td {...cell.getCellProps()} onClick={handleRowClick}>
+										<td {...cell.getCellProps()} onClick={(e) => handleRowClick(e, cell)}>
 											{cell.render('Cell')}
 										</td>
 									);

@@ -1,5 +1,6 @@
 .modal {
-	min-width: 30%;
+	min-width: 40%;
+	min-height: 70%;
 	position: absolute;
 	left: 50%;
 	top: 50%;
@@ -27,11 +28,8 @@
 		background: none;
 		position: absolute;
         right: 1em;
-        top: 1em;
-        width: 1em;
 		font-weight: 400;
         color: var(--secondary-color);
-		font-size: 1.5em;
 		font-stretch: expanded;
 		height: 1rem;
 		margin: 0.75rem 0.75rem 0 0.75rem;

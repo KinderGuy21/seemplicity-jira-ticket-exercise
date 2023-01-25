@@ -1,7 +1,9 @@
+import { PROVIDERS } from 'constants';
+
 export const FINDINGS_MOCK_DATA = [
 	{
 		id: 0,
-		title: 'This is the title of the findingsdfgsdfgsdfgsdfgsdfgsdfgsdfgsdfgdsfgsdfgdsfg',
+		title: 'This is the title of the finding',
 		description: 'This is the description of the finding',
 		ticket: {},
 	},
@@ -13,7 +15,6 @@ export const FINDINGS_MOCK_DATA = [
 			id: 1337,
 			provider: 'Monday',
 			issueType: 'Bug',
-			url: 'http://localhost:3000/tickets/1337',
 		},
 	},
 	{
@@ -54,7 +55,6 @@ export const FINDINGS_MOCK_DATA = [
 			id: 2987,
 			provider: 'ServiceNow',
 			issueType: 'Task',
-			url: 'http://localhost:3000/tickets/2987',
 		},
 	},
 	{
@@ -65,7 +65,6 @@ export const FINDINGS_MOCK_DATA = [
 			id: 354,
 			provider: 'Jira',
 			issueType: 'Story',
-			url: 'http://localhost:3000/tickets/354',
 		},
 	},
 	{
@@ -94,7 +93,6 @@ export const FINDINGS_MOCK_DATA = [
 			id: 5768,
 			provider: 'ServiceNow',
 			issueType: 'Task',
-			url: 'http://localhost:3000/tickets/5768',
 		},
 	},
 	{
@@ -105,7 +103,6 @@ export const FINDINGS_MOCK_DATA = [
 			id: 695,
 			provider: 'Jira',
 			issueType: 'Story',
-			url: 'http://localhost:3000/tickets/695',
 		},
 	},
 	{
@@ -121,3 +118,24 @@ export const FINDINGS_MOCK_DATA = [
 		ticket: {},
 	},
 ];
+
+export const PROVIDERS_PROJECTS = {
+	[PROVIDERS.JIRA]: [
+		{ value: 'Computer-Science', label: 'Computer Science' },
+		{ value: 'Physics', label: 'Physics' },
+		{ value: 'Chemistry', label: 'Chemistry' },
+		{ value: 'Mathematics', label: 'Mathematics' },
+	],
+	[PROVIDERS.MONDAY]: [
+		{ value: 'Soccer', label: 'Soccer' },
+		{ value: 'Basketball', label: 'Basketball' },
+		{ value: 'Volleyball', label: 'Volleyball' },
+		{ value: 'American Football', label: 'American Football' },
+	],
+	[PROVIDERS.SERVICENOW]: [
+		{ value: 'Piano', label: 'Piano' },
+		{ value: 'Guitar', label: 'Guitar' },
+		{ value: 'Drums', label: 'Drums' },
+		{ value: 'Violin', label: 'Violin' },
+	],
+};

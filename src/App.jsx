@@ -9,31 +9,33 @@ const App = () => {
 		<BrowserRouter>
 			<Navbar />
 			<Routes>
-				<Route exact path={PATH_NAMES.EMPTY} element={
-					<Navigate to={PATH_NAMES.DASHBOARD} replace={true} />
-				} />
-				<Route exact path={PATH_NAMES.DASHBOARD} element={
-					<Dashboard />
-				} />
-				<Route exact path={PATH_NAMES.FINDINGS} element={
-					<Findings />
-				} />
-				<Route exact path={PATH_NAMES.REMEDIATION} element={
-					<Remediation />
-				} />
-				<Route exact path={PATH_NAMES.RULES} element={
-					<Rules />
-				} />
-				<Route exact path={PATH_NAMES.SETTINGS} element={
-					<h1>SETTINIGS</h1>
-				} />
-				<Route path='*' element={
-					<NotFound />
-				} />
-
+				<Route
+					exact
+					path={PATH_NAMES.EMPTY}
+					element={
+						<Navigate to={PATH_NAMES.DASHBOARD} replace={true} />
+					}
+				/>
+				<Route
+					exact
+					path={PATH_NAMES.DASHBOARD}
+					element={<Dashboard />}
+				/>
+				<Route
+					exact
+					path={PATH_NAMES.FINDINGS}
+					element={<Findings />}
+				/>
+				<Route
+					exact
+					path={PATH_NAMES.REMEDIATION}
+					element={<Remediation />}
+				/>
+				<Route exact path={PATH_NAMES.RULES} element={<Rules />} />
+				<Route path='*' element={<NotFound />} />
 			</Routes>
 		</BrowserRouter>
-	)
+	);
 };
 
 export default App;

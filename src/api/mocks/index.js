@@ -1,3 +1,3 @@
-import { FINDINGS_MOCK_DATA } from './findings';
+import { FINDINGS_MOCK_DATA, PROVIDERS_PROJECTS } from './findings';
 
-export { FINDINGS_MOCK_DATA };
+export { FINDINGS_MOCK_DATA, PROVIDERS_PROJECTS };
